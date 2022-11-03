@@ -1,6 +1,2 @@
 #!/bin/bash
-<<<<<<< HEAD
 cut -d ':' -f 1,6 /etc/passwd | sort
-=======
-cut -d '.' -f 1,6 /etc/passwd | sort
->>>>>>> 5a09bd2b545314866a1595b2c7c226baeed2cc11
