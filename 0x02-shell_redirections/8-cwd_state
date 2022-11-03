@@ -1,2 +1,6 @@
 #!/bin/bash
+<<<<<<< HEAD
 ls -la > ls_cwd-content
+=======
+ls -la > ls_cwd_content
+>>>>>>> 5a09bd2b545314866a1595b2c7c226baeed2cc11
