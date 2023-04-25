@@ -1,18 +1,10 @@
 #!/usr/bin/env bash
-# Install nginx and start it
-sudo apt-get -y install nginx
+# Script that configures a new Ubuntu machine to respect above requirements
 
-# Firewall setting: Allow Nginx to serve on HTTP
-sudo ufw allow 'Nginx HTTP'
+sudo apt-get update
+sudo apt-get install -y nginx
 
-# Override the default index file served as home page
-sudo echo "Holberton School" >> /var/www/html/index.html
-
-#Give the user  ownership to website files
-sudo chown -R $USER:$USER /var/www/html
-sudo chmod -R 755 /var/www
-
-# Redirect to /redirect_me to a youtube video
-sudo sed -i '37i\rewrite ^/redirect_me https://www.https://www.linkedin.com/in/solomon-gebreegziabher-17b5251b2/ permanent;' /etc/nginx/sites-available/default
-
-sudo service nginx start
+echo "Hello World!" | sudo tee /var/www/html/index.html
+string_for_replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/wwwhttps://www.youtube.com/channel/UCaL7ePJpm9GWm4iDfsxzvDg permanent;"
+sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
+sudo service nginx restart
